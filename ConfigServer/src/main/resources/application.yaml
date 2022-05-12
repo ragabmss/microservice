@@ -11,9 +11,9 @@ spring:
       server:
         git:
           #uri: C:\work\ksr\kolkata2020labsconfig
-          uri: https://github.com/paulsan1/microservice.git
-          username: paulsan1@in.ibm.com
-          password: P@ssw0rd@IBM
+          uri: https://github.com/ragabmss/microservice.git
+          username: ragabms@gmail.com
+          password: Swakur@21
           skipSslValidation: true  
     bus:
       enabled: true
