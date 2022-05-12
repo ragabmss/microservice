@@ -18,7 +18,4 @@ spring:
     bus:
       enabled: true
       destination: configXchangebus                   
-  rabbitmq:
-    host: rabbitmq-master
-    port: 5672
-       
+  
