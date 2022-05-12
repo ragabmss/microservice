@@ -1,0 +1,44 @@
+Eureka
+http://localhost:8761/
+
+MS1 - conversionfactor
+
+jdbc:h2:mem:conversionDB;DB_CLOSE_DELAY=-1
+
+http://localhost:8081/conversionfactor/defaultAdd
+http://localhost:8081/conversionfactor/getAll
+http://localhost:8081/h2/
+
+http://localhost:8081/conversionfactor/addFactor - Post
+{"id":2,"country":"IND","currency":"INR","conversionfactor":"0.24"}
+{"id":3,"country":"GB","currency":"GBP","conversionfactor":"1.29"}
+
+http://localhost:8081/conversionfactor/updateFactor/2 - Put
+{"id":2,"country":"IND","currency":"INR","conversionfactor":"0.013"}
+
+
+http://localhost:8081/conversionfactor/getByCurrency/EUR
+
+MS2 - currency
+
+http://localhost:8082/currency/conversion03/100/GBP/INR
+
+Gateway
+http://localhost:9092/currency/conversion01/100/GBP/INR
+
+
+Zipkin URL :
+<Docker VM ip>:9411/zipkin/
+
+Rabbit mq:
+<Docker VM ip>:15672/
+
+
+
+
+
+
+
+Error
+ERRO[0002] failed to dial gRPC: cannot connect to the Docker daemon. Is 'docker daemon' running on this host?: open //./pipe/docker_engine: The system cannot find the file specified.
+error during connect: Post http://%2F%2F.%2Fpipe%2Fdocker_engine/v1.37/build?buildargs=%7B%7D&cachefrom=%5B%5D&cgroupparent=&cpuperiod=0&cpuquota=0&cpusetcpus=&cpusetmems=&cpushares=0&dockerfile=Dockerfile&labels=%7B%7D&memory=0&memswap=0&networkmode=default&rm=1&session=6913c984d4d32cc4798ddf91171dc785a8e9580dfc9a5507c36cf0f49da057b1&shmsize=0&t=santanupaul%2Feurekaact%3A1&target=&ulimits=null: open //./pipe/docker_engine: The system cannot find the file specified. In the default daemon configuration on Windows, the docker client must be run elevated to connect. This error may also indicate that the docker daemon is not running.

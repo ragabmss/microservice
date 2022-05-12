@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      uri: ${cloudapigateway.configserverurl:http://192.168.99.100:8888}
+      fail-fast: false
+  application:
+    name: cloudapigateway
+  profiles:
+    active: dev
+
+server:
+  port: 9092
